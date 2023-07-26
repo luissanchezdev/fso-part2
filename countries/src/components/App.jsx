@@ -6,7 +6,6 @@ import Country from "./Country"
 export default function App() {
   const [countries, setCountries] = useState([])
   const [newSearch, setNewSearch] = useState('')
-  const [expandView, setExpandView]  = useState(false)
   const [dataWeather, setDataWeather] = useState('')
 
   useEffect(() => {
@@ -31,8 +30,6 @@ export default function App() {
       <Country 
         countries = {countries}
         newSearch={newSearch}
-        expandView={expandView}
-        setExpandView={setExpandView}
         setCountries={setCountries}
         dataWeather={dataWeather}
         setDataWeather={setDataWeather}
