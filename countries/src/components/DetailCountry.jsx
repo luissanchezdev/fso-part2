@@ -4,25 +4,17 @@ import axios from "axios"
 export default function DetailCountry({ country, languages, countryFlag, dataWeather, setDataWeather}) { 
   const city = country.capital
   const urlBase = import.meta.env.VITE_URL_BASE_WEATHER
-  console.log({urlBase})
   const pass = import.meta.env.VITE_API_KEY
-  console.log({pass})
   const url = `${urlBase}${pass}&query=${city}`
-  console.log({url})
   useEffect(()=> {
       setDataWeather('loading')
       axios
       .get(url)
       .then(response => {
         let responseWeather = response.data
-        let responseCity = responseWeather.location.name
-        console.log({responseCity})
-        console.log({responseWeather})
         setDataWeather(responseWeather)
     })
   },[])
-
-  
 
   return (
     <>
@@ -36,7 +28,6 @@ export default function DetailCountry({ country, languages, countryFlag, dataWea
           ? 
           '' 
           : 
-          
           <div>
             <h4>Weather in {country.capital}</h4>
             <p><strong>temperature: </strong>{dataWeather.current.temperature}℃</p>
