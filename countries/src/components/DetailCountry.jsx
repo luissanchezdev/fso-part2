@@ -32,7 +32,7 @@ export default function DetailCountry({ country, languages, countryFlag, dataWea
             <h4>Weather in {country.capital}</h4>
             <p><strong>temperature: </strong>{dataWeather.current.temperature}℃</p>
             <img src={`${dataWeather.current.weather_icons[0]}`}/>
-            <p><strong>wind: {dataWeather.current.wind_speed} mph direction {dataWeather.current.wind} </strong></p>
+            <p><strong>wind: {dataWeather.current.wind_speed} mph direction {dataWeather.current.wind_dir} </strong></p>
           </div>}
         </div>
         
